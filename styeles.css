@@ -1,0 +1,132 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+    font-family: 'Roboto', sans-serif;
+    animation: backgroundMove 10s linear infinite;
+}
+
+@keyframes backgroundMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+#game-container {
+    position: relative;
+    width: 80%;
+    height: 70%;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+#coin-counter {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: #ffd700;
+    text-shadow: 1px 1px 2px #000;
+}
+
+#task-section {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.logo {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    cursor: pointer;
+    transition: transform 0.2s, top 2s, left 2s;
+}
+
+.logo:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+@keyframes moveUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(30px);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.5);
+    }
+}
+
+.sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ffd700;
+    border-radius: 50%;
+    opacity: 0;
+    animation: sparkle 1s infinite;
+}
+
+#sparkle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#wallet-section {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+#connect-wallet, #connect-youtube {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #0088cc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#connect-wallet:hover, #connect-youtube:hover {
+    background-color: #0077b5;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    #game-container {
+        width: 90%;
+        height: 
